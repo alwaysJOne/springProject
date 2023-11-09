@@ -53,7 +53,7 @@
                 </thead>
                 <tbody>
                 	<c:forEach var="b" items="${list}">
-	                	<tr>
+	                	<tr onclick="location.href='detail.bo?bno=${b.boardNo}'">
 	               			<td>${b.boardNo}</td>
 	               			<td>${ b.boardTitle }</td>
 	               			<td>${ b.boardWriter }</td>

@@ -11,4 +11,16 @@ public interface BoardService {
 	int selectListCount();
 	//게시글 리스트 조회
 	ArrayList<Board> selectList(PageInfo pi);
+	
+	//게시글 작성 서비스(insert)
+	int insertBoard(Board b);
+	
+	//게시글 상세조회
+	Board selectBoard(int boardNo);
+	
+	//게시글 조회수증가(update)
+	int increaseCount(int boardNo);
+	
+	//게시글 삭제서비스(update)
+	int deleteBoard(int boardNO);
 }

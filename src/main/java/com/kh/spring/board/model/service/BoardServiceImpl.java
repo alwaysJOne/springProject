@@ -29,4 +29,26 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.selectList(sqlSession, pi);
 	}
 
+	@Override
+	public int insertBoard(Board b) {
+		return boardDao.insertBoard(sqlSession, b);
+	}
+
+	@Override
+	public Board selectBoard(int boardNo) {
+		return boardDao.selectBoard(sqlSession, boardNo);
+	}
+
+	@Override
+	public int increaseCount(int boardNo) {
+		
+		return boardDao.increaseCount(sqlSession, boardNo);
+	}
+
+	@Override
+	public int deleteBoard(int boardNO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
