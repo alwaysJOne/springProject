@@ -206,6 +206,7 @@ public class BoardController {
 		return new Gson().toJson(list);
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="rinsert.bo")
 	public String ajaxInsertReply(Reply r) {
 		//int result = boardService.insertReply(r);

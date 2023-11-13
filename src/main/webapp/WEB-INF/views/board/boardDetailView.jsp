@@ -158,8 +158,8 @@
             	$.ajax({
                     url: "rinsert.bo",
                     data: {
-                        refBno: ${b.boardNo},
-            			replyWriter: ${loginUser.userId},
+                        refBno: '${b.boardNo}',
+            			replyWriter: '${loginUser.userId}',
             			replyContent: $("#content").val()
                     },
                     success: function(res){
