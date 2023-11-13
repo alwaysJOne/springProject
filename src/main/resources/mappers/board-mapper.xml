@@ -61,6 +61,7 @@
  		 WHERE BOARD_NO = #{boardNo}
  		   AND STATUS = 'Y'
  	</update>
+ 	
  	<select id="selectBoard" resultMap="boardResult">
  		SELECT BOARD_NO,
  			   BOARD_TITLE,
@@ -74,6 +75,20 @@
  		 WHERE STATUS = 'Y'
  		   AND BOARD_NO = #{boardNo}
  	</select>
- 	
+ 	<!-- 게시글 삭제 관련 sql -->
+ 	<update id="deleteBoard">
+ 		UPDATE BOARD
+ 		   SET STATUS = 'N'
+ 	 	 WHERE BOARD_NO = #{boardNo}
+ 	</update>
+ 	<!-- 게시글 수정 관련 쿼리문 -->
+ 	<update id="updateBoard">
+ 		UPDATE BOARD
+ 		   SET BOARD_TITLE = #{boardTitle},
+ 		   	   BOARD_CONTENT = #{boardContent},
+ 		   	   ORIGIN_NAME = #{originName},
+ 		   	   CHANGE_NAME = #{changeName}
+ 		 WHERE BOARD_NO = #{boardNo}
+ 	</update>
  	
  </mapper>

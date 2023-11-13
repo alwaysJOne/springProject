@@ -23,4 +23,7 @@ public interface BoardService {
 	
 	//게시글 삭제서비스(update)
 	int deleteBoard(int boardNO);
+	
+	//게시글 수정 서비스(update)
+	int updateBoard(Board b);
 }

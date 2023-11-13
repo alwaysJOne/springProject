@@ -26,23 +26,27 @@
             <table id="contentArea" algin="center" class="table">
                 <tr>
                     <th width="100">제목</th>
-                    <td colspan="3">게시글제목</td>
+                    <td colspan="3">${b.boardTitle}</td>
                 </tr>
                 <tr>
                     <th>작성자</th>
-                    <td>admin</td>
+                    <td>${b.boardWriter}</td>
                     <th>작성일</th>
-                    <td>2022-02-01</td>
+                    <td>${b.createDate}</td>
                 </tr>
                 <tr>
                     <th>첨부파일</th>
                     <td colspan="3">
-						
-							<!-- case1 -->
-                        		<a href="" download="">이미지.jpg</a>
-							<!-- case2 -->
-								첨부파일이 없습니다.
-		
+						<c:choose>
+							<c:when test="${ not empty b.originName }">
+								<!-- case1 -->
+                        		<a href="${b.changeName}" download="${b.originName}">${b.originName}</a>
+                        	</c:when>
+                        	<c:otherwise>
+								<!-- case2 -->
+								첨부파일 없음
+							</c:otherwise>
+						</c:choose>
                     </td>
                 </tr>
                 <tr>
@@ -50,24 +54,38 @@
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td colspan="4"><p style="height:150px;">게시글내용입니다</p></td>
+                    <td colspan="4"><p style="height:150px;">${b.boardContent}</p></td>
                 </tr>
             </table>
             <br>
 
-   			
-   			<!-- 수정하기, 삭제하기 버튼은 이 글이 본인이 작성한 글일 경우에만 보여져야 함 -->
-            <div align="center">
-                <a class="btn btn-primary" onclick="">수정하기</a>
-                <a class="btn btn-danger" onclick="">삭제하기</a>
-            </div>
-            <br><br>
-           
+   			<c:if test="${ loginUser.userId eq b.boardWriter }">
+	   			<!-- 수정하기, 삭제하기 버튼은 이 글이 본인이 작성한 글일 경우에만 보여져야 함 -->
+	            <div align="center">
+	                <a class="btn btn-primary" onclick="postFormSubmit(1)">수정하기</a>
+	                <a class="btn btn-danger" onclick="postFormSubmit(2)">삭제하기</a>
+	            </div>
+	            <br><br>
+            </c:if>
             
              <form action="" method="post" id="postForm">
-           		<input type="hidden" name=bno value="7">
-           		<input type="hidden" name="filePath" value="이미지.jpg">
+           		<input type="hidden" name="bno" value="${b.boardNo}">
+           		<input type="hidden" name="filePath" value="${b.changeName}">
              </form>
+             
+            <script>
+            	function postFormSubmit(num){
+            		if(num === 1){
+                        $("#postForm").attr('action', 'updateForm.bo');
+            			//document.querySelector("#postForm").setAttribute('action','updateForm.bo');
+            		} else {
+                        $("#postForm").attr('action', 'delete.bo');
+            			//document.querySelector("#postForm").setAttribute('action','delete.bo');
+            		}
+                    $("#postForm").submit();
+                    //document.querySelector("#postForm").submit();
+            	}
+            </script>
             
           
             <!-- 댓글 기능은 나중에 ajax 배우고 나서 구현할 예정! 우선은 화면구현만 해놓음 -->

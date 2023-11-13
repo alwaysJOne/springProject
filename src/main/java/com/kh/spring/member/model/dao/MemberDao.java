@@ -24,4 +24,8 @@ public class MemberDao {
 		System.out.println(userId);
 		return sqlSession.update("memberMapper.deleteMember", userId);
 	}
+	
+	public int idCheck(SqlSessionTemplate sqlSession, String checkId) {
+		return sqlSession.selectOne("memberMapper.idCheck", checkId);
+	}
 }
