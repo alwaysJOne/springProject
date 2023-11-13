@@ -114,16 +114,7 @@
                     </tr>      
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>admin</th>
-                        <td>댓글남깁니다</td>
-                        <td>2022-05-10</td>
-                    </tr>
-                    <tr>
-                        <th>admin</th>
-                        <td>test샘플</td>
-                        <td>2022-08-10</td>
-                    </tr>
+                 
                 </tbody>
             </table>
         </div>
@@ -158,6 +149,28 @@
                     },
                     error: function(){
 						console.log("rlist.bo ajax통신 실패");
+                    }
+                })
+            }
+            
+            //댓글을 추가해주는 메서드
+            function addReply(){
+            	$.ajax({
+                    url: "rinsert.bo",
+                    data: {
+                        refBno: ${b.boardNo},
+            			replyWriter: ${loginUser.userId},
+            			replyContent: $("#content").val()
+                    },
+                    success: function(res){
+                             //성공시 다시 그려주기
+						if (res === "success"){
+							selectReplyList();
+							$("#content").val("");
+						}
+                    },
+                    error: function(){
+						console.log(" ajax통신 실패");
                     }
                 })
             }

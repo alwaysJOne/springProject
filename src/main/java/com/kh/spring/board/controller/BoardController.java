@@ -205,4 +205,17 @@ public class BoardController {
 		
 		return new Gson().toJson(list);
 	}
+	
+	@RequestMapping(value="rinsert.bo")
+	public String ajaxInsertReply(Reply r) {
+		//int result = boardService.insertReply(r);
+//		if (boardService.insertReply(r) > 0) {
+//			return "success";
+//		} else {
+//			return "fail";
+//		}
+		
+		return boardService.insertReply(r) > 0 ? "success" : "fail";
+	}
+	
 }
