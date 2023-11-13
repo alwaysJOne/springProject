@@ -3,6 +3,7 @@ package com.kh.spring.board.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpSession;
@@ -12,11 +13,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.kh.spring.board.model.service.BoardService;
 import com.kh.spring.board.model.vo.Board;
+import com.kh.spring.board.model.vo.Reply;
 import com.kh.spring.common.model.vo.PageInfo;
 import com.kh.spring.common.template.Pagenation;
 
@@ -192,5 +196,13 @@ public class BoardController {
 			model.addAttribute("errorMsg", "게시글 삭제 실패");
 			return "common/errorMsg";
 		}
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="rlist.bo", produces="application/json; charset=UTF-8")
+	public String ajaxSelectReplyList(int bno) {
+		ArrayList<Reply> list = boardService.selectReply(bno);
+		
+		return new Gson().toJson(list);
 	}
 }
