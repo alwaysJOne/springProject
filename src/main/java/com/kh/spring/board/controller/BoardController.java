@@ -201,9 +201,9 @@ public class BoardController {
 	@ResponseBody
 	@RequestMapping(value="rlist.bo", produces="application/json; charset=UTF-8")
 	public String ajaxSelectReplyList(int bno) {
-		ArrayList<Reply> list = boardService.selectReply(bno);
+//		ArrayList<Reply> list = boardService.selectReply(bno);
 		
-		return new Gson().toJson(list);
+		return new Gson().toJson(boardService.selectReply(bno));
 	}
 	
 	@ResponseBody
@@ -217,6 +217,12 @@ public class BoardController {
 //		}
 		
 		return boardService.insertReply(r) > 0 ? "success" : "fail";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="topList.bo", produces="application/json; charset=UTF-8")
+	public String ajaxTopBoardList() {
+		 return new Gson().toJson(boardService.selectTopBoardList());
 	}
 	
 }
