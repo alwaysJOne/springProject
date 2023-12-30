@@ -1,12 +1,12 @@
-# Would, U?
-> 친구와 함께 일기를 작성하고 서로의 감정을 돌아볼 수 있는 서비스
+# 학습용 KH사이트?
+> spring학습을 위한 클론사이트입니다.
 
 ## 프로젝트 개요
 
 ![로고](./front/public/mainlogo.png)
 
 - 개발 기간: 2023-00-00 ~ 2023-00-00
-- 서비스 링크: [https://www.naver.com](https://www.naver.com)
+- 개발자 링크: [https://test.com](https://test.com)
 - 본 프로젝트의 구조를 더 자세히 알고 싶다면?
   - [백엔드 README](./BACK.md)
   - [프론트엔드 README](./FRONT.md)
@@ -14,13 +14,8 @@
 ## 기술 스택
 `Front-End` 
 
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/ReactQuery-FF4154?style=flat-square&logo=ReactQuery&logoColor=white"/>
-<img src="https://img.shields.io/badge/Recoil-black?style=flat-square&logo=Recoil&logoColor=white"/>
-<img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
-<img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"/>
-<img src="https://img.shields.io/badge/ReactHookForm-EC5990?style=flat-square&logo=ReactHookForm&logoColor=white"/>
+<img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/>
+
 
 
 `Back-end`
