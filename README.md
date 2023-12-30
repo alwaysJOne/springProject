@@ -24,8 +24,9 @@
 
 
 `Communication`
-<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white">
+
+<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=white"/>
+<img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white"/>
 
 ## 사용 라이브러리및 API
 -
