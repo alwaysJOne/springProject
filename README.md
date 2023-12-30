@@ -37,28 +37,7 @@
 
 ## 실행 방법
 
-1. 프로젝트 레포지토리를 클론합니다.
 
-```sh
-$ git clone https://kdt-gitlab.elice.io/ai_track/class05/ai_project/team05/team05.git
-```
-
-2. 프로젝트 실행에 필요한 패키지를 설치합니다.
-
-```sh
-$ cd front
-$ npm i
-
-$ cd back
-$ npm i
-```
-
-3. development server을 실행합니다.
-```sh
-$ npm run dev
-# or
-$ yarn dev
-```
 
 ## 주요 기능
 
@@ -103,10 +82,7 @@ $ yarn dev
 
 ## 부가 기능
 
-* 소셜 로그인 (카카오)
-* 반응형 웹 디자인
-* react-error-boundary 사용하여 폴백 UI로 에러 화면 구성
-* 전역 style 정의하여 라이트/다크 모드 구현
+
 
 ## 팀원 소개
 
